@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+
+$white      : hsl(0, 0%, 100%) !default;
+$light-grey : hsl(0, 0%,  75%) !default;
+$grey       : hsl(0, 0%,  50%) !default;
+$dark-grey  : hsl(0, 0%,  25%) !default;
+$black      : hsl(0, 0%,   0%) !default;
+
+$purple     : hsl(259, 84%, 64%) !default;
+$red        : hsl(  0, 80%, 60%) !default;
+$orange     : hsl( 25, 84%, 64%) !default;
+$yellow     : hsl( 50, 79%, 64%) !default;
+$green      : hsl(140, 57%, 64%) !default;
+$blue       : hsl(207, 84%, 64%) !default;
+
+$paper-white: hsl(0, 0%, 99%) !default;
+$text-color : hsl(0, 0%, 10%) !default;
+
+// Define theme color
+$theme-color: $green;
+
+$palette: () !default;
+$palette: map-merge(
+  (
+    "white"       : $white,
+    "light-grey"  : $light-grey,   
+    "grey"        : $grey,
+    "dark-grey"   : $dark-grey,
+    "black"       : $black,
+    "purple"      : $purple,
+    "red"         : $red,
+    "orange"      : $orange,
+    "yellow"      : $yellow,
+    "green"       : $green,
+    "blue"        : $blue,
+    "paper-white" : $paper-white,
+    "text-color"  : $text-color,
+    "theme-color" : $theme-color
+  ),
+  $palette
+);
+
+$base-font-family:  "Segoe UI", "Helvetica Neue",Helvetica,Arial,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-line-height: 1.5 !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    1140px !default;
+$mobile:           800px !default;
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@function color($key) {
+  @return map-get($palette, $key);
+}
+
+// Import partials.
+@import
+  "base",
+  "layout",
+  "syntax-highlighting"
+;

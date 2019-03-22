@@ -1,0 +1,22 @@
+---
+layout: page
+title: Categories
+---
+
+{%- assign sorted_categories = site.categories | sort -%}
+{%- for category in sorted_categories -%}
+  {%- assign name = category | first -%}
+  <h2 id="{{ name }}">{{ name }} ({{ site.categories[name] | size }})</h2>
+  <ul class="post-list">
+    {%- for post in site.categories[name] -%}
+    <li>
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        <h3>
+          {{ post.title | escape }}
+        </h3>
+        {%- include post-meta.html -%}
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+{%- endfor -%}

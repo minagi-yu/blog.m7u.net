@@ -1,0 +1,71 @@
+<p class="post-meta">
+  {% comment %}
+  {%- if post.update -%}
+  <span class="post-updated">
+    <svg class="svg-icon" viewbox="0 0 16 16">
+      <use xlink:href="{{ '/blog/assets/icons/icons.svg#update' | relative_url }}" />
+    </svg>
+    <time class="post-updated" datetime="{{ post.update | date_to_xmlschema }}" itemprop="dateModified">
+      {{ post.update | date: "%Y-%m-%d" }}
+    </time>
+  </span>
+  {%- endif -%}
+  {% endcomment %}
+
+
+  <span class="post-published">
+    <svg class="svg-icon" viewbox="0 0 16 16">
+      <use xlink:href="{{ '/blog/assets/icons/icons.svg#clock' | relative_url }}" />
+    </svg>
+    <time class="post-published" datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+      {{ post.date | date: "%Y-%m-%d" }}
+    </time>
+  </span>
+
+
+  {%- if post.categories -%}
+  <span class="post-categories">
+    <svg class="svg-icon" viewbox="0 0 16 16">
+      <use xlink:href="{{ '/blog/assets/icons/icons.svg#category' | relative_url }}" />
+    </svg>
+    {%- assign sorted_categories = post.categories | sort -%}
+    {%- for category in sorted_categories -%}
+      <span class="post-category">
+        {%- if meta-link -%}
+        <a href="{{ "/blog/categories.html" | relative_url }}#{{ category | slugify }}">
+        {%- endif -%}
+          {{ category }}
+        {%- if meta-link -%}
+        </a>
+        {%- endif -%}
+      </span>
+    {%- endfor -%}
+  </span>
+  {%- endif -%}
+
+
+  {%- if post.tags -%}
+  <span class="post-tags">
+    <svg class="svg-icon" viewbox="0 0 16 16">
+      <use xlink:href="{{ '/blog/assets/icons/icons.svg#tag' | relative_url }}" />
+    </svg>
+    {%- assign sorted_tags = post.tags | sort -%}
+    {%- for tag in sorted_tags -%}
+      <span class="post-tag">
+        {%- if meta-link -%}
+        <a href="{{ "/blog/tags.html" | relative_url }}#{{ tag | slugify }}">
+        {%- endif -%}
+          {{ tag }}
+        {%- if meta-link -%}
+        </a>
+        {%- endif -%}
+      </span>
+    {%- endfor -%}
+  </span>
+  {%- endif -%}
+
+  <!-- 記事の著者 -->
+  {%- if post.author -%}
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ post.author }}</span></span>
+  {%- endif -%}
+</p>

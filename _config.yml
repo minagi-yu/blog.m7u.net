@@ -1,0 +1,60 @@
+# Site info
+title: "みなぎのサイト"
+description: >- 
+  電子工作とかITとか
+baseurl: "" # the subpath of your site, e.g. /blog
+permalink: /blog/:categories/:title:output_ext
+url: "https://mngu.net" # the base hostname & protocol for your site, e.g. http://example.com
+logo: /blog/assets/logo.png
+favicon: /blog/assets/logo.png
+
+# Author info
+author:
+  name        : "みなぎ"
+  bio         : "強いおたくになりたい。"
+  email       : ""
+  github      : "minagi-yu"
+  atcoder     : "minagi"
+  twitter     : "minagi_yu"
+  misskey:
+    instance  : "misskey.xyz"
+    username  : "minagi"
+  pronamafc   : "201"
+  atcoder     : "minagi"
+
+# Front Matter Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Pagination options
+#paginate: 5
+#paginate_path: "/blog/page:num/"
+
+# Localization
+lang: ja
+timezone: Asia/Tokyo
+
+# Sass options
+sass:
+  style: expanded
+
+# Feed
+feed:
+  path: /blog/atom.xml
+
+# Build settings
+markdown: kramdown
+#plugins:
+#  - jekyll-paginate
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE

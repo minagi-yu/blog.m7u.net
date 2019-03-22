@@ -1,0 +1,32 @@
+<aside>
+    <a class="avatar" href="/blog/about.html" >
+        <img src="/blog/assets/avatar.jpg">
+    </a>
+    <h1 class="author-name">{{ site.author.name }}</h1>
+    {%- include social.html -%}
+    <hr>
+    <h1>Category</h1>
+    <ul class="category-list">
+        {%- assign sorted_categories = site.categories | sort -%}
+        {%- for category in sorted_categories -%}
+        <li>
+            <a href="{{ "/blog/categories.html" | relative_url }}#{{ category | first | slugify }}">{{ category | first }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+    <hr>
+    <h1>Tags</h1>
+    <ul class="tag-list">
+        {%- assign sorted_tags = site.tags | sort -%}
+        {%- for tag in sorted_tags -%}
+        <li>
+            <a href="{{ "/blog/tags.html" | relative_url }}#{{ tag | first | slugify }}">{{ tag | first }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+    <!--
+    <hr>
+    <h1>Twitter</h1>
+    <a class="twitter-timeline" data-height="600" data-link-color="#56aaf0" href="https://twitter.com/minagi_yu?ref_src=twsrc%5Etfw">Tweets by minagi_yu</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    -->
+</aside>

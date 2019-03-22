@@ -1,0 +1,337 @@
+/**
+ * Site header
+ */
+.site-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid color("grey");
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.site-meta {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-auto-rows: max-content;
+  text-decoration: none;
+  align-items: end;
+}
+
+.site-logo {
+  grid-area: 1/1/3/2;
+  
+}
+
+.site-title {
+  grid-area: 1/2/2/3;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  vertical-align: bottom;
+
+  &,
+  &:visited {
+    color: color("dark-grey");
+  }
+}
+
+.site-description {
+  grid-area: 2/2/3/3;
+  color: color("grey");
+}
+
+.site-nav {
+  flex: 1;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 0 2rem;
+      a {
+        display: block;
+        color: color("dark-grey");
+        text-align: center;
+        text-decoration: none;
+        svg {
+          width: 2rem;
+          height: 2rem;
+          fill: color("dark-grey");
+        }
+        .svg-icon {
+          padding: 0;
+        }
+
+        &:hover {
+          color: color("theme-color");
+          svg {
+            fill: color("theme-color");
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-query($mobile) {
+  .site-header {
+    display: initial;
+  }
+  .site-nav {
+    box-sizing: border-box;
+    flex: initial;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    box-shadow: 0 0 4px color("grey");
+    background-color: color("white");
+    ul {
+      justify-content: space-around;
+      li {
+        padding: 0;
+        a {
+          &:hover {
+            color: color("dark-grey");
+            svg {
+              fill: color("dark-grey");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  display: flex;
+  background-color: color("dark-grey");
+  color: color("light-grey");
+  text-align: center;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .copylights {
+    margin: 1rem auto;
+  }
+
+  ul.social-media-list {
+    margin: 0;
+  }
+  
+  ul.social-media-list li {
+    display: inline-block;
+    margin: 1rem;
+  }
+}
+
+@include media-query($mobile) {
+  .site-footer {
+    flex-direction: column;
+    margin-bottom: calc(2rem + #{$base-line-height}rem);
+
+    .copylights {
+      margin: 0.3rem auto;
+    }
+
+    ul.social-media-list li {
+      display: inline-block;
+      margin: 0.3rem;
+    }
+  }
+}
+
+small {
+  font-size: 1rem;
+}
+
+/**
+ * Side bar
+ */
+aside {
+  .avatar {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 40%;
+    img {
+      border-radius: 50%;
+      border: 5px solid color("light-grey");
+    }
+  }
+  .author-name {
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 0;
+    li {
+      box-sizing: border-box;
+      margin: 0.5em;
+      a {
+        border-radius: 3px;
+        display: block;
+        padding: 0.3em 0.5em;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  ul.category-list {
+    flex-direction: column;
+  }
+  ul.social-media-list li {
+    flex-grow: 1;
+    min-width: calc(50% - 1em);
+    a {
+      border: 1px solid color("light-grey");
+      color: color("dark-grey");
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+  ul.category-list li, ul.tag-list li {
+    a {
+      color: color("white");
+      background-color: color("theme-color");
+      border: 1px solid color("theme-color");
+      &:hover {
+        color: color("theme-color");
+        background-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/**
+ * Posts
+ */
+
+// .post-header, .page-header : 記事の題名と投稿日時などの情報
+.post-header, .page-header {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid color("grey");
+}
+
+// .post-title, .page-title : 記事の題名
+.post-title, .page-title {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+// .post-content, .page-content : 記事本文
+.post-content, .page-content {
+  margin-bottom: 2rem;
+
+  h1, h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid color("theme-color");
+    margin: 2em 0 1.5em;
+    padding-left: 0.5em;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 1.5em 0 1em;
+
+    &::before {
+      content: "●";
+      color: color("theme-color");
+      padding-right: 1em;
+    }
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 1em;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+
+
+/**
+ * Page content
+ */
+
+.page-heading {
+  font-size: 2rem;
+}
+
+.post-list-heading {
+  font-size: 1.75rem;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 2rem;
+  }
+}
+
+.post-meta {
+  color: color("grey");
+
+  .svg-icon {
+    fill: color("theme-color");
+  }
+
+  > span {
+    display: inline-block;
+    padding-right: 1rem;
+  }
+
+  .post-category:not(:first-of-type)::before, .post-tag:not(:first-of-type)::before {
+    content: ", "
+  }
+}
+
+a.post-link {
+  display: block;
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: color("text-color");
+
+  &:hover {
+    box-shadow: none;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0.5em 0;
+
+    &::before {
+      content: none;
+    }
+  }
+}

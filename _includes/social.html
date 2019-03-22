@@ -1,0 +1,67 @@
+<ul class="social-media-list">
+  {%- if site.author.twitter -%}
+  <li>
+    <a href="https://www.twitter.com/{{ site.author.twitter | cgi_escape | escape }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/twitter.svg' | relative_url }}"/>
+      <span class="username">Twitter</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if site.author.facebook -%}
+  <li>
+    <a href="https://www.facebook.com/{{ site.author.facebook | cgi_escape | escape }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/facebook.svg' | relative_url }}"/>
+      <span class="username">Facebook</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if site.author.github -%}
+  <li>
+    <a href="https://github.com/{{ site.author.github | cgi_escape | escape }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/github.svg' | relative_url }}"/>
+      <span class="username">GitHub</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if site.author.instagram -%}
+  <li>
+    <a href="https://instagram.com/{{ site.author.instagram | cgi_escape | escape }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/instagram.svg' | relative_url }}"/>
+      <span class="username">Instagram</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if  site.author.mastdon.username and  site.author.mastdon.instance -%}
+  <li>
+    <a href="https://{{ site.author.mastdon.instance | cgi_escape | escape}}/@{{ site.author.mastdon.username }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/mastdon.svg' | relative_url }}"/>
+      <span class="username">Mastodon</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if  site.author.misskey.username and  site.author.misskey.instance -%}
+  <li>
+    <a href="https://{{ site.author.misskey.instance | cgi_escape | escape}}/@{{ site.author.misskey.username }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/misskey.svg' | relative_url }}"/>
+      <span class="username">Misskey</span>
+    </a>
+  </li>
+  {%- endif -%}
+  {%- if site.author.atcoder -%}
+  <li>
+    <a href="https://atcoder.jp/users/{{ site.author.atcoder | cgi_escape | escape }}">
+      <img class="svg-icon" src="{{ '/blog/assets/icons/atcoder.png' | relative_url }}"/>
+      <span class="username">AtCoder</span>
+    </a>
+  </li>
+  {%- endif -%}
+  <li>
+    <a href="{{ site.feed.path | default: "/blog/atom.xml" | relative_url }}">
+      <svg class="svg-icon">
+        <use xlink:href="{{ '/blog/assets/icons/icons.svg#feed' | relative_url }}">
+        </use>
+      </svg>
+      <span>Feed</span>
+    </a>
+  </li>
+</ul>
