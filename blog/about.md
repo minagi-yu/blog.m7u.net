@@ -10,7 +10,7 @@ title: About
 ### 環境
 
 OS
-: [FreeBSD 11.2](https://www.freebsd.org/)
+: [FreeBSD 12.0](https://www.freebsd.org/)
 
 webサーバー
 : [H2O](https://h2o.examp1e.net/)
