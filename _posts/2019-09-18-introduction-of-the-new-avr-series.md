@@ -148,7 +148,7 @@ Device Family Packsは[Microchip Packs Repository](https://packs.download.microc
 
 Device Family Packsの使い方を解説します。
 
-ダウンロードするとAtmel.ATxxxx_DFP.x.x.xx.atpackのような名前のファイルがダウンロードされます。実態はZIPファイルなので、.atpackを.zipに変更して適当なフォルダに展開します。
+ダウンロードするとMicrochip.ATxxxx_DFP.x.x.xx.atpackのような名前のファイルがダウンロードされます。実態はZIPファイルなので、.atpackを.zipに変更して適当なフォルダに展開します。
 
 展開した中のフォルダには、AVRマイコンのレジスタの定義などが記述されたXMLファイルや、ヘッダーファイル、ライブラリなどが入っているのが見えます。
 
@@ -156,7 +156,7 @@ Device Family Packsの使い方を解説します。
 
 例えば、ホームフォルダにatpackを展開して、main.cファイルをATmega4809用にコンパイルする際は、
 
-<pre><samp>$ <kbd>avr-gcc -mmcu=atmega4809 -B ~/Microchip.ATmega_DFP.2.0.12/gcc/dev/atmega4809/ -I ~/Atmel.ATtiny_DFP.1.3.229/include/ main.c -o main.o</kbd></samp></pre>
+<pre><samp>$ <kbd>avr-gcc -mmcu=atmega4809 -B ~/Microchip.ATmega_DFP.2.0.12/gcc/dev/atmega4809/ -I ~/Microchip.ATmega_DFP.2.0.12/include/ main.c -o main.o</kbd></samp></pre>
 
 
 とします。
