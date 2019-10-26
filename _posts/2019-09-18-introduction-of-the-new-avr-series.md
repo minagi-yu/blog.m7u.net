@@ -89,7 +89,7 @@ tiny、megaと名前がついていてもXMEGA系に属しているように周�
 - 3つのモードのスリープ（アイドル・スタンバイ・パワーダウン）
 - イベントシステム
 - 2レベル割込み
-- 16bitタイマー（TCA, TCB)　※TCAはmegaAVR 0-seriesのみ
+- 16bitタイマー（TCA, TCB)
 - 12bitタイマー（TCD）　※tinyAVR 1-Seriesのみ
 - リアルタイムクロック（RTC）
 - ウォッチドッグ　タイマー（WDT）
