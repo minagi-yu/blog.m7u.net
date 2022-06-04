@@ -2,7 +2,7 @@
 title: "NanoPi NEOでFreeBSDを動かしてみた"
 date: 2020-06-01 22:23:00 +0900
 categories: computer
-tags: computer nanopi sbd freebsd
+tags: computer nanopi sbc freebsd
 ---
 
 ## NanoPi NEO
