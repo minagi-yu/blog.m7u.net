@@ -1,7 +1,7 @@
 <header class="site-header">
 
   {%- assign page_paths = site.pages | map: "path" -%}
-  <a class="site-meta" href="{{ "/blog/" | relative_url }}">
+  <a class="site-meta" href="{{ "/" | relative_url }}">
     {%- if site.logo -%}
     <div class="site-logo">
       <img src="{{ site.logo | escape }}" alt="website's logo" />
@@ -15,36 +15,36 @@
     <nav class="site-nav">
       <ul>
         <li>
-            <a class="page-link" href="{{ "/blog/" | relative_url }}">
+            <a class="page-link" href="{{ "/" | relative_url }}">
               <svg class="svg-icon" viewbox="0 0 16 16">
-                <use xlink:href="{{ '/blog/assets/icons/icons.svg#home' | relative_url }}" />
+                <use xlink:href="{{ '/assets/icons/icons.svg#home' | relative_url }}" />
               </svg>
               <br>
               Home
             </a>
         </li>
         <li>
-            <a class="page-link" href="{{ "/blog/about.html" | relative_url }}">
+            <a class="page-link" href="{{ "/about.html" | relative_url }}">
               <svg class="svg-icon" viewbox="0 0 16 16">
-                <use xlink:href="{{ '/blog/assets/icons/icons.svg#info' | relative_url }}" />
+                <use xlink:href="{{ '/assets/icons/icons.svg#info' | relative_url }}" />
               </svg>
               <br>
               About
             </a>
         </li>
         <li>
-            <a class="page-link" href="{{ "/blog/categories.html" | relative_url }}">
+            <a class="page-link" href="{{ "/categories.html" | relative_url }}">
               <svg class="svg-icon" viewbox="0 0 16 16">
-                <use xlink:href="{{ '/blog/assets/icons/icons.svg#category' | relative_url }}" />
+                <use xlink:href="{{ '/assets/icons/icons.svg#category' | relative_url }}" />
               </svg>
               <br>
               Categories
             </a>
         </li>
         <li>
-            <a class="page-link" href="{{ "/blog/tags.html" | relative_url }}">
+            <a class="page-link" href="{{ "/tags.html" | relative_url }}">
               <svg class="svg-icon" viewbox="0 0 16 16">
-                <use xlink:href="{{ '/blog/assets/icons/icons.svg#tag' | relative_url }}" />
+                <use xlink:href="{{ '/assets/icons/icons.svg#tag' | relative_url }}" />
               </svg>
               <br>
               Tags

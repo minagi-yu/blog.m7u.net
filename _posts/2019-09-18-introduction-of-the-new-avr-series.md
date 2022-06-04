@@ -118,7 +118,7 @@ AVR DA, DBファミリーには28ピンDIPが用意されています。ATmega32
 
 Cでプログラミングする際にも利点があります。**フラッシュROMのみに置きたい定数に、PROGMEMや__flashが不要になりました。**constキーワードを使って宣言した定数は、フラッシュROMにのみ配置されRAMの消費はありません。従来では単にconstで宣言した定数はフラッシュROMにもRAMにも置かれていました。フラッシュROMにだけ置きたい定数ではpgmspace.hをインクルードしてPROGMEMキーワードを使って定数を宣言したり、Named Address Spacesの機能を使って__flashキーワードを使って宣言しないといけませんでした。また、PROGMEMキーワードを使って宣言した定数にを読み出すにはそれ用の関数を使う必要がありました。これはアドレス空間が違ったため、定数にアクセスするにはld命令なのかlpm命令なのか区別する必要があるためです。これら新しいマイコンのデフォルトのavrxmega3のリンカースクリプトを見るとセクション.rodataが分離され、フラッシュのみに配置されるようになっています。
 
-![ATtiny161xのメモリーマップ](https://mngu.net/blog/assets/images/introduction-of-the-new-avr-series/memory_map.png)
+![ATtiny161xのメモリーマップ](https://mngu.net/assets/images/introduction-of-the-new-avr-series/memory_map.png)
 
 AVRマイコンのアドレス幅は16bitなので最大空間は64KBです。そのため、各種レジスタとRAMとROMを同一空間上に配置すると48KBのフラッシュが最大となるでしょう。64KB以上の大規模なプログラムとなると32bitマイコンの方が有利と感じているので、大容量品を切り捨ててうまく住み分けを図ってるなと思います。
 

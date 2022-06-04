@@ -1,12 +1,12 @@
 # Site info
-title: "みなぎのサイト"
-description: >- 
+title: "みなゆろぐ"
+description: >-
   電子工作とかITとか
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /blog/:categories/:title:output_ext
-url: "https://mngu.net" # the base hostname & protocol for your site, e.g. http://example.com
-logo: /blog/assets/logo.png
-favicon: /blog/assets/logo.png
+permalink: /:categories/:title:output_ext
+url: "https://blog.m7u.net" # the base hostname & protocol for your site, e.g. http://example.com
+logo: /assets/logo.png
+favicon: /assets/logo.png
 
 # Author info
 author:
@@ -33,7 +33,7 @@ defaults:
 
 # Pagination options
 #paginate: 5
-#paginate_path: "/blog/page:num/"
+#paginate_path: "/page:num/"
 
 # Localization
 lang: ja
@@ -44,8 +44,8 @@ sass:
   style: expanded
 
 # Feed
-feed:
-  path: /blog/atom.xml
+# feed:
+#   path: /atom.xml
 
 # Build settings
 markdown: kramdown
