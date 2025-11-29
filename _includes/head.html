@@ -3,10 +3,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- if site.author -%}
-  <meta name="author" content="{{ site.author.name | escape }}">
+    <meta name="author" content="{{ site.author.name | escape }}">
   {%- endif -%}
   {%- if site.favicon -%}
-  <link rel="icon" href="{{ site.favicon | escape }}">
+    <link rel="icon" href="{{ site.favicon | escape | relative_url}}">
   {%- endif -%}
-  <title>{% if page.title %}{{page.title | escape}} - {% endif %}{{site.title | escape}}</title>
+  <title>
+    {% if page.title %}{{ page.title | escape }} - {% endif %}
+    {{ site.title | escape }}
+  </title>
 </head>
